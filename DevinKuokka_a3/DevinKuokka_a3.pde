@@ -18,7 +18,7 @@ boolean showBoundingBox;
 
 void setup() {
   size(700,600);
-  surface.setResizable(true);
+  //surface.setResizable(true);
   oldWidth = width;
   oldHeight = height;
   data = loadData("drinks.csv");
@@ -123,7 +123,7 @@ void createBars() {
   float xstep = width*0.8/(fields.length-1);
   for(int i = 0; i < fields.length; i++) {
     boolean reverse = bars[i] == null ? false : bars[i].reverse;
-    bars[i] = new Bar(width*0.1 + i*xstep, reverse, ranges[i], fields[i], i); 
+    bars[i] = new Bar(width*0.1 + i*xstep, reverse, ranges[i], fields[i], i);
   }
 }
 
@@ -150,7 +150,7 @@ DataPoint[] loadData(String path) {
         ranges[c-1][0] = Math.min(ranges[c-1][0], value);
         ranges[c-1][1] = Math.max(ranges[c-1][1], value);
       }
-      ys[c-1] = value; 
+      ys[c-1] = value;
     }
     d[r-1] = new DataPoint(row[0], ys);
     isStart = false;
