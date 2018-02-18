@@ -1,11 +1,472 @@
 <script src="processing.js"></script>
 <script type="text/processing" data-processing-target="processing-canvas">
+import java.util.*;
+
+DataPoint[] data;
+String title;
+String[] fields;
+Bar[] bars;
+float[][] ranges;
+
+Tooltip activeTip;
+Set<String> info;
+
+color black = color(#252525);
+int oldWidth, oldHeight;
+
+boolean dragging;
+float[] boundingBox;
+boolean showBoundingBox;
+
 void setup() {
- size(200, 200);
- background(100);
- stroke(255);
- ellipse(50, 50, 25, 25);
- println('hello web!');
+  size(700,600);
+  surface.setResizable(true);
+  oldWidth = width;
+  oldHeight = height;
+  data = loadData("drinks.csv");
+  bars = new Bar[fields.length];
+  createBars();
+  info = new HashSet<String>();
+  dragging = false;
+  showBoundingBox = false;
+  boundingBox = new float[4];
+}
+
+void draw() {
+  background(255,255,255);
+  if (oldWidth != width || oldHeight != height) {
+    createBars();
+    oldWidth = width;
+    oldHeight = height;
+  }
+  if(dragging) {
+    setBoundingBox();
+  }
+  if(showBoundingBox) {
+    drawBoundingBox();
+  }
+  for (DataPoint d : data) {
+    if (!dragging || !showBoundingBox) {
+      d.fade(false);
+    }
+    String s = d.hoverInfo();
+    if (s != null) {
+      info.add(d.hoverInfo());
+    }
+  }
+  for (DataPoint d : data) {
+    if (!dragging && showBoundingBox && !d.inBoundingBox()) {
+      d.fade(true);
+    } else if (!dragging && info.size() > 0 && !info.contains(d.toString()) && !showBoundingBox) {
+      d.fade(true);
+    }
+    d.display();
+  }
+  for(Bar b : bars) {
+    b.display();
+  }
+  if (!dragging && info.size() > 0) {
+    for(DataPoint d : data) {
+      if(info.contains(d.toString())) {
+        d.highlight();
+        d.display();
+      }
+    }
+    activeTip = new Tooltip(info);
+    activeTip.display();
+  }
+  info.clear();
+}
+
+void mouseDragged() {
+  dragging = true;
+}
+
+void mouseReleased() {
+  dragging = false;
+  showBoundingBox = true;
+}
+
+void mousePressed() {
+  showBoundingBox = false;
+  boundingBox[0] = mouseX;
+  boundingBox[1] = mouseY;
+}
+
+void mouseClicked() {
+  showBoundingBox = false;
+  for(Bar b : bars) {
+    b.flip();
+    b.colorLines();
+  }
+}
+
+void setBoundingBox() {
+  boundingBox[2] = mouseX;
+  boundingBox[3] = mouseY;
+  strokeWeight(1);
+  stroke(#cccccc);
+  fill(#f7f7f7);
+  rectMode(CORNERS);
+  rect(boundingBox[0], boundingBox[1], boundingBox[2], boundingBox[3]);
+  noStroke();
+}
+
+void drawBoundingBox() {
+  strokeWeight(1);
+  stroke(#cccccc);
+  fill(#f7f7f7);
+  rectMode(CORNERS);
+  rect(boundingBox[0], boundingBox[1], boundingBox[2], boundingBox[3]);
+  noStroke();
+}
+
+void createBars() {
+  float xstep = width*0.8/(fields.length-1);
+  for(int i = 0; i < fields.length; i++) {
+    boolean reverse = bars[i] == null ? false : bars[i].reverse;
+    bars[i] = new Bar(width*0.1 + i*xstep, reverse, ranges[i], fields[i], i);
+  }
+}
+
+DataPoint[] loadData(String path) {
+  String[] lines = loadStrings(path);
+  String[] firstLine = split(lines[0], ",");
+  title = firstLine[0].substring(1); // FILM
+  fields = new String[firstLine.length-1];
+  for(int i = 1; i < firstLine.length; i++){
+    fields[i-1] = firstLine[i];
+  }
+  ranges = new float[fields.length][2];
+  boolean isStart = true;
+  DataPoint[] d = new DataPoint[lines.length-1];
+  for (int r = 1; r < lines.length; r++) {
+    String[] row = split(lines[r], ",");
+    float[] ys = new float[row.length-1];
+    for (int c = 1; c < row.length; c++){
+      float value = (float) parseFloat(row[c]);
+      if (isStart) {
+        ranges[c-1][0] = value;
+        ranges[c-1][1] = value;
+      } else {
+        ranges[c-1][0] = Math.min(ranges[c-1][0], value);
+        ranges[c-1][1] = Math.max(ranges[c-1][1], value);
+      }
+      ys[c-1] = value;
+    }
+    d[r-1] = new DataPoint(row[0], ys);
+    isStart = false;
+  }
+  return d;
+}
+
+class Bar {
+  int index;
+  float x, y, w, h;
+  float bottomValue, topValue;
+  float scaledMin, scaledMax;
+  float[] buckets;
+  boolean reverse;
+  String label;
+  Button button;
+  color c;
+
+  Bar(float x, boolean reverse, float[] ranges, String label, int index) {
+    this.index = index;
+    this.x = x;
+    y = height/2;
+    w = 5;
+    h = Math.max(height*0.8, height-200);
+    bottomValue = reverse ? ranges[1] : ranges[0];
+    topValue = reverse ? ranges[0] : ranges[1];
+    scaledMin = y - h/2;
+    scaledMax = y + h/2;
+    buckets = new float[6];
+    float step = (scaledMax - scaledMin)/buckets.length;
+    for(int i = 0; i < buckets.length; i++) {
+      buckets[i] = scaledMin + (i+1)*step;
+    }
+    this.reverse = reverse;
+    this.label = label;
+    button = new Button(x,height - height*0.03);
+    c = color(#cccccc);
+  }
+
+  void flip() {
+    if (button.isActive()) {
+      float temp = bottomValue;
+      bottomValue = topValue;
+      topValue = temp;
+      reverse = !reverse;
+      display();
+    }
+  }
+
+  void setColor(color c) {
+    this.c = c;
+  }
+
+  void colorLines() {
+    if (mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2) {
+      for(Bar b : bars) {
+        b.setColor(#cccccc);
+        b.display();
+      }
+      c = color(black);
+      display();
+      for(DataPoint d : data) {
+        d.updateColor(buckets, index, reverse);
+      }
+    }
+  }
+
+  void display() {
+    noStroke();
+    fill(c);
+    rectMode(CENTER);
+    rect(x, y, w, h);
+    fill(black);
+    textAlign(CENTER, CENTER);
+    int lh = 2;
+    if(textWidth(label) > width*0.1) {
+      lh = (int) Math.ceil(textWidth(label)/(width*0.1));
+    }
+    //ellipse(x, width*0.03, width*0.15, lh*textAscent());
+    text(label, x, width*0.03, width*0.15, lh*textAscent());
+    text(String.format("%.01f", topValue), x, height*0.075);
+    text(String.format("%.01f", bottomValue), x, height-height*0.075);
+    button.display();
+  }
+}
+
+class Button {
+  float x, y, w, h, padding;
+  boolean isBar;
+  String[] text = {"Transform To Line", "Transform To Bar"};
+  color c;
+
+  Button (float x, float y) {
+    this.x = x;
+    this.y = y;
+    w = textWidth("flip") + 10;
+    h = textAscent()+10;
+  }
+
+  boolean isActive() {
+    if (mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void display() {
+    stroke(#cccccc);
+    fill(255,255,255);
+    rectMode(CENTER);
+    rect(x, y, w, h, 7);
+    fill(black);
+    textAlign(CENTER, CENTER);
+    text("Flip", x, y);
+    noStroke();
+  }
+}
+
+class DataPoint {
+  String name;
+  float[] y;
+  float barHeight;
+  color[] redGradient = {color(#fcae91), color(#fb6a4a), color(#de2d26)}; //lightest -> strongest
+  color[] blueGradient = {color(#bdd7e7), color(#6baed6), color(#3182bd)}; //lightest-> strongest
+  color c;
+  color prev;
+
+  DataPoint(String name, float[] ys) {
+    this.name = name;
+    this.y = ys;
+    barHeight = Math.max(height*0.8, 70);
+    c = blueGradient[2];
+    prev = c;
+  }
+
+  void drawLines() {
+    stroke(c);
+    for(int i = 0; i < y.length-1; i++){
+      float y1 = getScaledY(i);
+      float y2 = getScaledY(i+1);
+      line(bars[i].x, y1, bars[i+1].x, y2);
+    }
+    noStroke();
+  }
+
+  String hoverInfo() {
+    for(int i = 0; i < y.length-1; i++){
+      if (mouseX >= bars[i].x && mouseX <= bars[i+1].x) {
+        float y1 = getScaledY(i);
+        float y2 = getScaledY(i+1);
+        float m = (y2-y1)/(bars[i+1].x - bars[i].x);
+        float b = y1 - m*bars[i].x;
+        if (m*mouseX + b <= mouseY + 2 && m*mouseX + b >= mouseY - 2) {
+          return toString();
+        }
+      }
+    }
+    return null;
+  }
+
+  boolean inBoundingBox() {
+    float[] bb = boundingBox;
+    for (int s = 0; s <= 2; s+=2) {
+      for(int i = 0; i < bars.length-1; i++) {
+        if (bars[i].x < bb[s] && bb[s] < bars[i+1].x) {
+          float y1 = getScaledY(i);
+          float y2 = getScaledY(i+1);
+          float m = (y2-y1)/(bars[i+1].x - bars[i].x);
+          float b = y1 - m*bars[i].x;
+          float maxx = Math.max(bb[0], bb[2]);
+          float minx = Math.min(bb[0], bb[2]);
+          if (Math.min(bb[1], bb[3]) < m*bb[s]+b && m*bb[s]+b < Math.max(bb[1], bb[3])) {
+            return true;
+          } else if ((bb[1]-b)/m > Math.max(minx, bars[i].x) && (bb[1]-b)/m < Math.min(maxx, bars[i+1].x)) {
+          return true;
+          } else if ((bb[3]-b)/m > Math.max(minx, bars[i].x) && (bb[3]-b)/m < Math.min(maxx, bars[i+1].x)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  void fade(boolean yes) {
+    strokeWeight(1);
+    if (yes) {
+      prev = c;
+      c = color(#cccccc);
+    } else {
+      c = prev;
+    }
+  }
+
+  void highlight() {
+    strokeWeight(5);
+    c = prev;
+  }
+
+  float getScaledY(int index) {
+    return map(y[index], bars[index].topValue, bars[index].bottomValue, bars[index].scaledMin, bars[index].scaledMax);
+  }
+
+  void updateColor(float[] buckets, int barIndex, boolean reverse) {
+    float scaledY = getScaledY(barIndex);
+    for(int i = 0; i < buckets.length; i++) {
+      if (scaledY <= buckets[i]) {
+        if (i < 3) {
+          if (!reverse) {
+            c = redGradient[2-i];
+          } else {
+            c = blueGradient[2-i];
+          }
+        } else {
+          if (!reverse) {
+            c = blueGradient[i-3];
+          } else {
+            c = redGradient[i-3];
+          }
+        }
+        break;
+      }
+    }
+    prev = c;
+    drawLines();
+  }
+
+  void display() {
+    drawLines();
+  }
+
+  String toString() {
+    String s = name + ": (";
+    for (float i : y){
+      s += Math.round(i*10)/10.0 + ", ";
+    }
+    return s.substring(0,s.length()-2) + ")";
+  }
+}
+
+class Tooltip {
+  Set<String> text;
+  float h, w;
+
+  Tooltip (Set<String> info) {
+    text = info;
+    float maxLength = 0;
+    for (String t : info) {
+      if (textWidth(t) > maxLength) {
+        maxLength = textWidth(t);
+      }
+    }
+    h = (textAscent()+5)*info.size();
+    w = maxLength;
+  }
+
+  void downLeft() {
+    rect(mouseX-w-15, mouseY-15, w+15, h+15, 7);
+    fill(3,43,47);
+    int i = 0;
+    for(String t : text){
+      text(t, mouseX-w-5, mouseY+(i*(textAscent()+5)));
+      i++;
+    }
+  }
+
+  void upLeft() {
+    rect(mouseX-w-15, mouseY-h-15, w+15, h+15, 7);
+    fill(black);
+    int i = 0;
+    for(String t : text){
+      text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
+      i++;
+    }
+  }
+
+  void downRight() {
+    rect(mouseX+15, mouseY-15, w+15, h+15, 7);
+    fill(black);
+    int i = 0;
+    for(String t : text){
+      text(t, mouseX+20, mouseY+(i*(textAscent()+5)));
+      i++;
+    }
+  }
+
+  void upRight() {
+    rect(mouseX+15, mouseY-h-15, w+15, h+15, 7);
+    fill(black);
+    int i = 0;
+    for(String t : text){
+      text(t, mouseX+20, mouseY-h+(i*(textAscent()+5)));
+      i++;
+    }
+  }
+
+  //direction where there is most room
+
+  void display() {
+    noStroke();
+    fill(#cccccc); // light gray
+    rectMode(CORNER);
+    textAlign(LEFT,CENTER);
+    if(mouseX-w-15 <= 0 && mouseY-h-15 <= 0) {
+      downRight();
+    } else if (mouseX-w-15 <= 0) {
+      upRight();
+    } else if(mouseX+w+15 > width && mouseY-h-15<=0) {
+      downLeft();
+    } else {
+      upLeft();
+    }
+  }
 }
 </script>
 <canvas id="processing-canvas"> </canvas>
