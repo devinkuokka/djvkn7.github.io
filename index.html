@@ -16,8 +16,14 @@ boolean dragging;
 float[] boundingBox;
 boolean showBoundingBox;
 
+void preload() {
+  textFont(createFont("Verdana", 20));
+}
+
 void setup() {
+  textFont(createFont("Verdana", 20));
   size(1000,800);
+  textFont(createFont("Verdana", 20));
   oldWidth = width;
   oldHeight = height;
   data = loadData("drinks.csv");
