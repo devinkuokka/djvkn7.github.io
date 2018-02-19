@@ -16,15 +16,8 @@ boolean dragging;
 float[] boundingBox;
 boolean showBoundingBox;
 
-PFont f;
-
-void preload() {
-  f=loadFont("FFScala.ttf"); 
-}
-
 void setup() {
   size(1000,800);
-  textFont(f,32);
   oldWidth = width;
   oldHeight = height;
   data = loadData("drinks.csv");
@@ -239,8 +232,8 @@ class Bar {
       lh = (int) Math.ceil(textWidth(label)/(width*0.1));
     }
     text(label, x, width*0.03, width*0.15, lh*textAscent());
-    text(String.format("%.01f", topValue), x, height*0.075);
-    text(String.format("%.01f", bottomValue), x, height-height*0.075);
+    text(topValue, x, height*0.075);
+    text(bottomValue, x, height-height*0.075);
     button.display();
   }
 }
@@ -272,7 +265,7 @@ class Button {
     rect(x, y, w, h, 7);
     fill(black);
     textAlign(CENTER, CENTER);
-    //text("Flip", x, y);
+    text("Flip", x, y);
     noStroke();
   }
 }
@@ -466,7 +459,7 @@ class Tooltip {
     fill(3,43,47);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX-w-5, mouseY+(i*(textAscent()+5)));
+      text(t, mouseX-w-5, mouseY+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -476,7 +469,7 @@ class Tooltip {
     fill(black);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
+      text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -486,7 +479,7 @@ class Tooltip {
     fill(black);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX+20, mouseY+(i*(textAscent()+5)));
+      text(t, mouseX+20, mouseY+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -496,12 +489,10 @@ class Tooltip {
     fill(black);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX+20, mouseY-h+(i*(textAscent()+5)));
+      text(t, mouseX+20, mouseY-h+(i*(textAscent()+5)));
       i++;
     }
   }
-
-  //direction where there is most room
 
   void display() {
     noStroke();
