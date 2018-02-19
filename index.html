@@ -1,7 +1,5 @@
 <script src="processing.js"></script>
 <script type="text/processing" data-processing-target="processing-canvas">
-import java.util.*;
-
 DataPoint[] data;
 String title;
 String[] fields;
@@ -9,7 +7,7 @@ Bar[] bars;
 float[][] ranges;
 
 Tooltip activeTip;
-Set<String> info;
+StringSet info;
 
 color black = color(#252525);
 int oldWidth, oldHeight;
@@ -26,7 +24,7 @@ void setup() {
   data = loadData("drinks.csv");
   bars = new Bar[fields.length];
   createBars();
-  info = new HashSet<String>();
+  info = new StringSet();
   dragging = false;
   showBoundingBox = false;
   boundingBox = new float[4];
@@ -83,8 +81,8 @@ void mouseDragged() {
 }
 
 void mouseReleased() {
-  dragging = false;
   showBoundingBox = true;
+  dragging = false;
 }
 
 void mousePressed() {
@@ -159,7 +157,6 @@ DataPoint[] loadData(String path) {
   }
   return d;
 }
-
 class Bar {
   int index;
   float x, y, w, h;
@@ -206,8 +203,12 @@ class Bar {
     this.c = c;
   }
 
+  boolean overBar() {
+    return mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2;
+  }
+
   void colorLines() {
-    if (mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h/2) {
+    if (overBar()) {
       for(Bar b : bars) {
         b.setColor(#cccccc);
         b.display();
@@ -231,14 +232,12 @@ class Bar {
     if(textWidth(label) > width*0.1) {
       lh = (int) Math.ceil(textWidth(label)/(width*0.1));
     }
-    //ellipse(x, width*0.03, width*0.15, lh*textAscent());
     text(label, x, width*0.03, width*0.15, lh*textAscent());
     text(String.format("%.01f", topValue), x, height*0.075);
     text(String.format("%.01f", bottomValue), x, height-height*0.075);
     button.display();
   }
 }
-
 class Button {
   float x, y, w, h, padding;
   boolean isBar;
@@ -271,7 +270,6 @@ class Button {
     noStroke();
   }
 }
-
 class DataPoint {
   String name;
   float[] y;
@@ -393,15 +391,62 @@ class DataPoint {
     return s.substring(0,s.length()-2) + ")";
   }
 }
+class StringSet {
+  String[] selected;
+  int endIndex;
 
+  StringSet() {
+    selected = new String[data.length];
+    endIndex = 0;
+  }
+
+  boolean contains(String s) {
+    int i = 0;
+    while(selected[i] != null) {
+      if(selected[i].equals(s)) {
+        return true;
+      }
+      i++;
+    }
+    return false;
+  }
+
+  void clear() {
+    endIndex = 0;
+    int i = 0;
+    while(selected[i] != null) {
+      selected[i] = null;
+      i++;
+    }
+  }
+
+  void add(String s) {
+    selected[endIndex] = s;
+    endIndex++;
+  }
+
+  int size() {
+    return endIndex;
+  }
+
+  String[] toArray() {
+    String[] definedData = new String[endIndex];
+    int i = 0;
+    while(selected[i] != null) {
+      definedData[i] = selected[i];
+      i++;
+    }
+    return definedData;
+  }
+}
 class Tooltip {
-  Set<String> text;
+  String[] text;
   float h, w;
 
-  Tooltip (Set<String> info) {
-    text = info;
+  Tooltip (StringSet info) {
+    text = info.toArray();
     float maxLength = 0;
-    for (String t : info) {
+    for (String t : text) {
       if (textWidth(t) > maxLength) {
         maxLength = textWidth(t);
       }
