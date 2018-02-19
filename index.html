@@ -500,6 +500,7 @@ class Tooltip {
     rectMode(CORNER);
     textAlign(LEFT,CENTER);
     if(mouseX-w-15 <= 0 && mouseY-h-15 <= 0) {
+      println("down right");
       //down right
       rect(mouseX+15, mouseY-15, w+15, h+15, 7);
       fill(black);
@@ -510,6 +511,7 @@ class Tooltip {
       }
     } else if (mouseX-w-15 <= 0) {
       //up right
+      println("up right");
       rect(mouseX+15, mouseY-h-15, w+15, h+15, 7);
       fill(black);
       int i = 0;
@@ -519,6 +521,7 @@ class Tooltip {
       }
     } else if(mouseX+w+15 > width && mouseY-h-15<=0) {
       //downLeft();
+      println("down left");
       rect(mouseX-w-15, mouseY-15, w+15, h+15, 7);
       fill(3,43,47);
       int i = 0;
@@ -528,6 +531,7 @@ class Tooltip {
       }
     } else {
       //upLeft();
+      println("up left");
       rect(mouseX-w-15, mouseY-h-15, w+15, h+15, 7);
       fill(black);
       int i = 0;
