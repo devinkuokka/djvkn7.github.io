@@ -19,12 +19,12 @@ boolean showBoundingBox;
 PFont f;
 
 void preload() {
-  f = createFont("Arial",12,true);
+  f=loadFont("FFScala.ttf"); 
 }
 
 void setup() {
   size(1000,800);
-  textFont(f);
+  textFont(f,32);
   oldWidth = width;
   oldHeight = height;
   data = loadData("drinks.csv");
