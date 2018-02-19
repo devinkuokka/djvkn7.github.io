@@ -16,14 +16,8 @@ boolean dragging;
 float[] boundingBox;
 boolean showBoundingBox;
 
-void preload() {
-  textFont(createFont("Verdana", 20));
-}
-
 void setup() {
-  textFont(createFont("Verdana", 20));
   size(1000,800);
-  textFont(createFont("Verdana", 20));
   oldWidth = width;
   oldHeight = height;
   data = loadData("drinks.csv");
@@ -240,7 +234,7 @@ class Bar {
     text(label, x, width*0.03, width*0.15, lh*textAscent());
     text(topValue, x, height*0.075);
     text(bottomValue, x, height-height*0.075);
-    button.display();
+    //button.display();
   }
 }
 class Button {
