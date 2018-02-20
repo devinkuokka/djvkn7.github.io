@@ -209,8 +209,8 @@ class Bar {
       lh = (int) Math.ceil(textWidth(label)/(width*0.1));
     }
     text(label, x, width*0.03, width*0.15, lh*textAscent());
-    text(String.format("%.01f", topValue), x, height*0.075);
-    text(String.format("%.01f", bottomValue), x, height-height*0.075);
+    text(topValue, x, height*0.075);
+    text(bottomValue, x, height-height*0.075);
     button.display();
   }
 }
