@@ -544,7 +544,14 @@ class Tooltip {
     } else if(mouseX+w+15 > width && mouseY-h-15<=0) {
       downLeft();
     } else {
-      upLeft();
+      //upLeft();
+      rect(mouseX-w-15, mouseY-h-15, w+15, h+15, 7);
+      fill(black);
+      int i = 0;
+      for(String t : text){
+        text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
+        i++;
+      }
     }
   }
 }
