@@ -12,21 +12,17 @@ StringSet info;
 color black = color(#252525);
 int oldWidth, oldHeight;
 
-boolean dragging;
-float[] boundingBox;
-boolean showBoundingBox;
+BoundingBox bb;
 
 void setup() {
-  size(1000,800);
+  size(700,600);
   oldWidth = width;
   oldHeight = height;
-  data = loadData("drinks.csv");
+  data = loadData("data.csv");
   bars = new Bar[fields.length];
   createBars();
   info = new StringSet();
-  dragging = false;
-  showBoundingBox = false;
-  boundingBox = new float[4];
+  bb = new BoundingBox();
 }
 
 void draw() {
@@ -36,14 +32,9 @@ void draw() {
     oldWidth = width;
     oldHeight = height;
   }
-  if(dragging) {
-    setBoundingBox();
-  }
-  if(showBoundingBox) {
-    drawBoundingBox();
-  }
+  bb.display();
   for (DataPoint d : data) {
-    if (!dragging || !showBoundingBox) {
+    if (!bb.drawing || !bb.show) {
       d.fade(false);
     }
     String s = d.hoverInfo();
@@ -52,9 +43,9 @@ void draw() {
     }
   }
   for (DataPoint d : data) {
-    if (!dragging && showBoundingBox && !d.inBoundingBox()) {
+    if (!bb.drawing && bb.show && !d.inBoundingBox()) {
       d.fade(true);
-    } else if (!dragging && info.size() > 0 && !info.contains(d.toString()) && !showBoundingBox) {
+    } else if (!bb.drawing && info.size() > 0 && !info.contains(d.toString()) && !bb.show) {
       d.fade(true);
     }
     d.display();
@@ -62,7 +53,7 @@ void draw() {
   for(Bar b : bars) {
     b.display();
   }
-  if (!dragging && info.size() > 0) {
+  if (!bb.drawing && info.size() > 0) {
     for(DataPoint d : data) {
       if(info.contains(d.toString())) {
         d.highlight();
@@ -76,46 +67,32 @@ void draw() {
 }
 
 void mouseDragged() {
-  dragging = true;
-}
-
-void mouseReleased() {
-  showBoundingBox = true;
-  dragging = false;
-}
-
-void mousePressed() {
-  showBoundingBox = false;
-  boundingBox[0] = mouseX;
-  boundingBox[1] = mouseY;
-}
-
-void mouseClicked() {
-  showBoundingBox = false;
-  for(Bar b : bars) {
-    b.flip();
-    b.colorLines();
+  if (bb.show && bb.isSelected()) {
+    bb.move(mouseX, mouseY);
+  } else {
+    if (!bb.drawing) {
+      bb.setStartPoint(mouseX, mouseY);
+      bb.drawing = true;
+    }
+    bb.setEndPoint(mouseX, mouseY);
   }
 }
 
-void setBoundingBox() {
-  boundingBox[2] = mouseX;
-  boundingBox[3] = mouseY;
-  strokeWeight(1);
-  stroke(#cccccc);
-  fill(#f7f7f7);
-  rectMode(CORNERS);
-  rect(boundingBox[0], boundingBox[1], boundingBox[2], boundingBox[3]);
-  noStroke();
+void mouseReleased() {
+  bb.show = bb.show || bb.drawing;
+  bb.drawing = false;
 }
 
-void drawBoundingBox() {
-  strokeWeight(1);
-  stroke(#cccccc);
-  fill(#f7f7f7);
-  rectMode(CORNERS);
-  rect(boundingBox[0], boundingBox[1], boundingBox[2], boundingBox[3]);
-  noStroke();
+void mouseClicked() {
+  boolean keep = false;
+  for(Bar b : bars) {
+    b.flip();
+    b.colorLines();
+    if (b.overBar()) {
+      keep = bb.show;
+    }
+  }
+  bb.show = keep;
 }
 
 void createBars() {
@@ -129,7 +106,7 @@ void createBars() {
 DataPoint[] loadData(String path) {
   String[] lines = loadStrings(path);
   String[] firstLine = split(lines[0], ",");
-  title = firstLine[0].substring(1); // FILM
+  title = firstLine[0].substring(1);
   fields = new String[firstLine.length-1];
   for(int i = 1; i < firstLine.length; i++){
     fields[i-1] = firstLine[i];
@@ -232,21 +209,73 @@ class Bar {
       lh = (int) Math.ceil(textWidth(label)/(width*0.1));
     }
     text(label, x, width*0.03, width*0.15, lh*textAscent());
-    text(topValue, x, height*0.075);
-    text(bottomValue, x, height-height*0.075);
-    //button.display();
+    text(String.format("%.01f", topValue), x, height*0.075);
+    text(String.format("%.01f", bottomValue), x, height-height*0.075);
+    button.display();
+  }
+}
+class BoundingBox {
+  float x1, y1, x2, y2;
+  boolean drawing, show;
+  float mx, my;
+
+  BoundingBox() {
+    drawing = false;
+    show = false;
+  }
+
+  void setStartPoint(float x, float y) {
+    x1 = x;
+    y1 = y;
+  }
+
+  void setEndPoint(float x, float y) {
+    x2 = x;
+    y2 = y;
+  }
+
+  boolean isSelected() {
+    if (mouseX > Math.min(x1,x2) && mouseX < Math.max(x1,x2) && mouseY > Math.min(y1,y2) && mouseY < Math.max(y1,y2)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void move(float x, float y) {
+    if(!drawing) {
+      mx = x;
+      my = y;
+      drawing = true;
+    }
+    x1 += x-mx;
+    x2 += x-mx;
+    y1 += y-my;
+    y2 += y-my;
+    mx = x;
+    my = y;
+  }
+
+  void display() {
+    if (drawing || show) {
+      strokeWeight(1);
+      stroke(#cccccc);
+      fill(#f7f7f7);
+      rectMode(CORNERS);
+      rect(x1, y1, x2, y2);
+      noStroke();
+    }
   }
 }
 class Button {
   float x, y, w, h, padding;
   boolean isBar;
-  String[] text = {"Transform To Line", "Transform To Bar"};
   color c;
 
   Button (float x, float y) {
     this.x = x;
     this.y = y;
-    w = textWidth("flip") + 10;
+    w = textWidth("Flip") + 10;
     h = textAscent()+10;
   }
 
@@ -312,21 +341,21 @@ class DataPoint {
   }
 
   boolean inBoundingBox() {
-    float[] bb = boundingBox;
+    float[] box = {bb.x1, bb.y1, bb.x2, bb.y2};
     for (int s = 0; s <= 2; s+=2) {
       for(int i = 0; i < bars.length-1; i++) {
-        if (bars[i].x < bb[s] && bb[s] < bars[i+1].x) {
+        if (bars[i].x < box[s] && box[s] < bars[i+1].x) {
           float y1 = getScaledY(i);
           float y2 = getScaledY(i+1);
           float m = (y2-y1)/(bars[i+1].x - bars[i].x);
           float b = y1 - m*bars[i].x;
-          float maxx = Math.max(bb[0], bb[2]);
-          float minx = Math.min(bb[0], bb[2]);
-          if (Math.min(bb[1], bb[3]) < m*bb[s]+b && m*bb[s]+b < Math.max(bb[1], bb[3])) {
+          float maxx = Math.max(box[0], box[2]);
+          float minx = Math.min(box[0], box[2]);
+          if (Math.min(box[1], box[3]) < m*box[s]+b && m*box[s]+b < Math.max(box[1], box[3])) {
             return true;
-          } else if ((bb[1]-b)/m > Math.max(minx, bars[i].x) && (bb[1]-b)/m < Math.min(maxx, bars[i+1].x)) {
+          } else if ((box[1]-b)/m > Math.max(minx, bars[i].x) && (box[1]-b)/m < Math.min(maxx, bars[i+1].x)) {
           return true;
-          } else if ((bb[3]-b)/m > Math.max(minx, bars[i].x) && (bb[3]-b)/m < Math.min(maxx, bars[i+1].x)) {
+          } else if ((box[3]-b)/m > Math.max(minx, bars[i].x) && (box[3]-b)/m < Math.min(maxx, bars[i+1].x)) {
             return true;
           }
         }
@@ -375,7 +404,9 @@ class DataPoint {
       }
     }
     prev = c;
-    drawLines();
+    if(!bb.show || (bb.show && inBoundingBox())) {
+      drawLines();
+    }
   }
 
   void display() {
@@ -459,7 +490,7 @@ class Tooltip {
     fill(3,43,47);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX-w-5, mouseY+(i*(textAscent()+5)));
+      text(t, mouseX-w-5, mouseY+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -469,7 +500,7 @@ class Tooltip {
     fill(black);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
+      text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -479,7 +510,7 @@ class Tooltip {
     fill(black);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX+20, mouseY+(i*(textAscent()+5)));
+      text(t, mouseX+20, mouseY+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -489,7 +520,7 @@ class Tooltip {
     fill(black);
     int i = 0;
     for(String t : text){
-      //text(t, mouseX+20, mouseY-h+(i*(textAscent()+5)));
+      text(t, mouseX+20, mouseY-h+(i*(textAscent()+5)));
       i++;
     }
   }
@@ -500,45 +531,13 @@ class Tooltip {
     rectMode(CORNER);
     textAlign(LEFT,CENTER);
     if(mouseX-w-15 <= 0 && mouseY-h-15 <= 0) {
-      println("down right");
-      //down right
-      rect(mouseX+15, mouseY-15, w+15, h+15, 7);
-      fill(black);
-      int i = 0;
-      for(String t : text){
-        //text(t, mouseX+20, mouseY+(i*(textAscent()+5)));
-        i++;
-      }
+      downRight();
     } else if (mouseX-w-15 <= 0) {
-      //up right
-      println("up right");
-      rect(mouseX+15, mouseY-h-15, w+15, h+15, 7);
-      fill(black);
-      int i = 0;
-      for(String t : text){
-        //text(t, mouseX+20, mouseY-h+(i*(textAscent()+5)));
-        i++;
-      }
+      upRight();
     } else if(mouseX+w+15 > width && mouseY-h-15<=0) {
-      //downLeft();
-      println("down left");
-      rect(mouseX-w-15, mouseY-15, w+15, h+15, 7);
-      fill(3,43,47);
-      int i = 0;
-      for(String t : text){
-        //text(t, mouseX-w-5, mouseY+(i*(textAscent()+5)));
-        i++;
-      }
+      downLeft();
     } else {
-      //upLeft();
-      println("up left");
-      rect(mouseX-w-15, mouseY-h-15, w+15, h+15, 7);
-      fill(black);
-      int i = 0;
-      for(String t : text){
-        //text(t, mouseX-w-5, mouseY-h+(i*(textAscent()+5)));
-        i++;
-      }
+      upLeft();
     }
   }
 }
