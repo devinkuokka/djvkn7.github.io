@@ -120,7 +120,7 @@ function loadVis(year) {
                     .attr("y", 20)
                     .text(year.toString() + " Election Results")
 
-    var president = svg.append("svg:image")
+    var president = svg.append("svg:image").lower()
                         .attr("id", "presPhoto")
                         .attr("xlink:href", "images/"+year.toString()+".jpg")
                         .attr("x", width/2-50)
