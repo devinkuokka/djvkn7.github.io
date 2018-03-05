@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.labels {
+  fill: #525252;
+  text-anchor: middle;
+  font-size: 10px;
+}
+
+</style>
+<svg width="960" height="600"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale.v2.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script>
+var map = [];
+map[0] = ["AK",null,null,null,null,null,null,null,null,null,null,"ME"];
+map[1] = [null,null,null,null,null,null,null,null,null,null,"VT", "NH"];
+map[2] = [null, "WA","ID","MT","ND","MN","IL","WI","MI","NY","RI","MA"];
+map[3] = [null,"OR","NV","WY","SD","IA","IN","OH","PA","NJ","CT",null];
+map[4] = [null,"CA","UT","CO","NE","MO","KY","WV","VA","MD","DC",null];
+map[5] = [null,null,"AZ","NM","KS","AR","TN","NC","SC","DE",null,null];
+map[6] = [null,null,null,null,"OK","LA","MS","AL","GA",null,null,null];
+map[7] = [null,"HI",null,null,"TX",null,null,null,null,"FL",null,null];
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+let colors = d3.schemeRdBu[10];
+
+var colorScale = d3.scaleQuantize()
+                   .domain([-50,50])
+                   .range(colors);
+
+var colorLegend = svg.append("g")
+                        .attr("id", "colorLegend")
+                      .selectAll("g")
+                      .data(colors)
+                      .enter().append("g")
+                        .attr("transform", c => {
+                          return "translate(" + (width*0.6/colors.length*colors.indexOf(c) + width*0.2) + "," + 80 + ")";
+                        })
+                  colorLegend.append("rect") //colored rectangles
+                                .attr("width", (width*.6-50)/10)
+                                .attr("height", 5)
+                                .attr("fill", c => { return c; })
+                  colorLegend.append("text") // win difference label
+                                .attr("class", "labels")
+                                .attr("x", ((width*.6-50)/colors.length)/2)
+                                .attr("y", 17)
+                                .text(c => {
+                                  return (colors.indexOf(c)*10-50).toString() + " to " + ((colors.indexOf(c)+1)*10-50).toString();
+                                })
+
+loadVis(2016);
+d3.csv("data/yearwise-winner.csv", function(d) {
+  var line = svg.append("line")
+                .attr("stroke-dasharray", "5,5")
+                .attr("x1", width*0.05)
+                .attr("x2", width-width*0.05)
+                .attr("y1", 40)
+                .attr("y2", 40)
+                .attr("style", "stroke-width: 1px")
+                .attr("stroke", "#737373")
+  var electionYears = svg.append("g")
+                            .attr("id", "electionYears")
+                          .selectAll("g")
+                          .data(d)
+                          .enter().append("g")
+                            .attr("id", y => { return "year" + y.YEAR.toString(); })
+                            .attr("transform", y => {
+                              return "translate(" + (width*0.9/(d.length-1)*d.indexOf(y) + width*0.05) + "," + 40 + ")";
+                            })
+                      electionYears.append("circle")
+                                      .attr("r", 5)
+                                      .attr("fill", y => {
+                                        let c = y.PARTY == "D" ? colorScale(40) : colorScale(-40);
+                                        return c;
+                                      })
+                                      .on("click", y => loadVis(y.YEAR))
+                                      .on("mouseenter", y => showPresident(y.YEAR))
+                                      .on("mouseleave", y => hidePresident())
+                      electionYears.append("text")
+                                      .attr("class", "labels")
+                                      .attr("y", 22)
+                                      .text(y => { return y.YEAR })
+});
+
+function showPresident(year) {
+  console.log("here");
+  var tooltip = d3.select("#year"+year.toString()).raise()
+                  .append("svg:image")
+                    .attr("id", "photo")
+                    .attr("xlink:href", "images/"+year.toString()+".jpg")
+                    .attr("x", -20)
+                    .attr("y", -45)
+                    .attr("width", 35)
+                    .attr("height", 35);
+}
+function hidePresident() {
+  d3.select("#photo").remove();
+}
+
+function loadVis(year) {
+
+  svg.selectAll("#states").remove();
+  svg.selectAll("#title").remove();
+  svg.selectAll("#presPhoto").remove();
+
+  d3.csv("data/election-results-" + year + ".csv", function(d) {
+
+    var title = svg.append("text")
+                    .attr("id", "title")
+                    .attr("font-size", "20")
+                    .attr("fill", "#525252")
+                    .attr("x", 10)
+                    .attr("y", 20)
+                    .text(year.toString() + " Election Results")
+
+    var president = svg.append("svg:image")
+                        .attr("id", "presPhoto")
+                        .attr("xlink:href", "images/"+year.toString()+".jpg")
+                        .attr("x", width/2-50)
+                        .attr("y", 110)
+                        .attr("width", 100)
+                        .attr("height", 100);
+
+    var stateWidth = (width-map[0].length*5)/map[0].length;
+    var stateHeight = (height-100-map.length*5)/map.length;
+
+    var states = svg.append("g")
+                    .attr("id", "states")
+                    .selectAll("g")
+                    .data(d)
+                    .enter().append("g")
+                      .attr("id", state => { return state.Abbreviation; })
+                      .attr("transform", s => {
+                        return "translate(" + scaledLocation(s, "x") + "," + scaledLocation(s, "y") + ")";
+                      })
+                  states.append("rect") //rectangles
+                          .attr("fill", state => {
+                            return colorScale(state.D_Percentage-state.R_Percentage);
+                          })
+                          .attr("width", stateWidth)
+                          .attr("height", stateHeight)
+                  states.append("text") //labels
+                          .attr("pointer-events", "none")
+                          .attr('fill', "#525252")
+                          .attr("text-anchor", "middle")
+                          .attr("transform", "translate(" + stateWidth/2 + "," + stateHeight/2 + ")")
+                          .append("tspan")
+                            .text(state => { return state.Abbreviation; })
+                          .append("tspan")
+                            .attr('x', 0)
+                            .attr('y', 20)
+                            .text(state => { return state.Total_EV; })
+    states.on("mouseenter", state => makeTooltip(state))
+    states.on("mouseleave", state => removeTooltip(state))
+
+    function scaledLocation(state, axis){
+      for(let i = 0; i < map.length; i++){
+        for(let j = 0; j < map[0].length; j++) {
+          if (map[i][j] == state.Abbreviation) {
+            return axis == "x" ? width/map[0].length*j : (height-100)/map.length*i+100;
+          }
+        }
+      }
+    }
+
+    function makeTooltip(state) {
+      var diff = state.D_Percentage-state.R_Percentage;
+      var tooltip = d3.select("#"+state.Abbreviation).raise()
+                      .append("g")
+                      .attr("id", state => { return "tt-"+state.Abbreviation; })
+                      .attr("transform", () => { // prevent the tooltip from going off the edge
+                        for(let i = 0; i < map.length; i++) {
+                          if(map[i].indexOf(state.Abbreviation) == 10 || map[i].indexOf(state.Abbreviation) == 11) {
+                            return translation = "translate(" + -stateWidth*2 + ",0)";
+                          }
+                        }
+                        return "translate(0,0)";;
+                      })
+                    tooltip.append("rect") //box
+                              .attr("fill", "white")
+                              .attr("width", stateWidth*3)
+                              .attr("height", stateHeight)
+                              .attr("rx", 10)
+                              .attr("style", "stroke-width: 2px")
+                              .attr("stroke", "#d9d9d9")
+                              .attr("pointer-events", "none")
+                    tooltip.append("text")
+                              .attr("pointer-events", "none")
+                              .attr('fill', colorScale(diff))
+                              .attr("transform", "translate(" + 7 + "," + 17 + ")")
+                              .attr("font-size", 10)
+                              .text(state.State)
+                            .append("tspan")
+                              .attr("fill", "#737373")
+                              .text(" - " + state.Total_EV + " electoral votes")
+                            .append("tspan")
+                              .attr("fill", colorScale(diff))
+                              .attr("x", 5)
+                              .attr("dy", 15)
+                              .text(diff >= 0 ?
+                                state.D_Nominee + ": " + state.D_Votes + " (" + state.D_Percentage + "%)" :
+                                state.R_Nominee + ": " + state.R_Votes + " (" + state.R_Percentage + "%)"
+                              )
+                            .append("tspan")
+                              .attr("fill", colorScale(-diff))
+                              .attr("x", 5)
+                              .attr("dy", 15)
+                              .text(diff <= 0 ?
+                                state.D_Nominee + ": " + state.D_Votes + " (" + state.D_Percentage + "%)" :
+                                state.R_Nominee + ": " + state.R_Votes + " (" + state.R_Percentage + "%)"
+                              )
+    }
+
+    function removeTooltip(state) {
+      d3.select("#tt-" + state.Abbreviation).remove()
+    }
+  });
+}
+</script>
