@@ -91,7 +91,6 @@ d3.csv("data/yearwise-winner.csv", function(d) {
 });
 
 function showPresident(year) {
-  console.log("here");
   var tooltip = d3.select("#year"+year.toString()).raise()
                   .append("svg:image")
                     .attr("id", "photo")
@@ -143,7 +142,7 @@ function loadVis(year) {
                       })
                   states.append("rect") //rectangles
                           .attr("fill", state => {
-                            return colorScale(state.D_Percentage-state.R_Percentage);
+                            return colorScale((toInt(state.D_Votes)-toInt(state.R_Votes))/(toInt(state.D_Votes)+toInt(state.R_Votes))*100); //state.D_Percentage-state.R_Percentage);
                           })
                           .attr("width", stateWidth)
                           .attr("height", stateHeight)
@@ -161,18 +160,8 @@ function loadVis(year) {
     states.on("mouseenter", state => makeTooltip(state))
     states.on("mouseleave", state => removeTooltip(state))
 
-    function scaledLocation(state, axis){
-      for(let i = 0; i < map.length; i++){
-        for(let j = 0; j < map[0].length; j++) {
-          if (map[i][j] == state.Abbreviation) {
-            return axis == "x" ? width/map[0].length*j : (height-100)/map.length*i+100;
-          }
-        }
-      }
-    }
-
     function makeTooltip(state) {
-      var diff = state.D_Percentage-state.R_Percentage;
+      var diff = (toInt(state.D_Votes)-toInt(state.R_Votes))/(toInt(state.D_Votes)+toInt(state.R_Votes))*100; //state.D_Percentage-state.R_Percentage
       var tooltip = d3.select("#"+state.Abbreviation).raise()
                       .append("g")
                       .attr("id", state => { return "tt-"+state.Abbreviation; })
@@ -194,7 +183,7 @@ function loadVis(year) {
                               .attr("pointer-events", "none")
                     tooltip.append("text")
                               .attr("pointer-events", "none")
-                              .attr('fill', colorScale(diff))
+                              .attr('fill', diff >= 0 ? colorScale(30) : colorScale(-30))
                               .attr("transform", "translate(" + 7 + "," + 17 + ")")
                               .attr("font-size", 10)
                               .text(state.State)
@@ -202,20 +191,20 @@ function loadVis(year) {
                               .attr("fill", "#737373")
                               .text(" - " + state.Total_EV + " electoral votes")
                             .append("tspan")
-                              .attr("fill", colorScale(diff))
+                              .attr("fill", diff >= 0 ? colorScale(30) : colorScale(-30))
                               .attr("x", 5)
                               .attr("dy", 15)
                               .text(diff >= 0 ?
-                                state.D_Nominee + ": " + state.D_Votes + " (" + state.D_Percentage + "%)" :
-                                state.R_Nominee + ": " + state.R_Votes + " (" + state.R_Percentage + "%)"
+                                state.D_Nominee + ": " + state.D_Votes + " (" + (toInt(state.D_Votes)/(toInt(state.D_Votes)+toInt(state.R_Votes))*100).toFixed(1) + "%)" :
+                                state.R_Nominee + ": " + state.R_Votes + " (" + (toInt(state.R_Votes)/(toInt(state.D_Votes)+toInt(state.R_Votes))*100).toFixed(1) + "%)"
                               )
                             .append("tspan")
-                              .attr("fill", colorScale(-diff))
+                              .attr("fill", diff > 0 ? colorScale(-30) : colorScale(30))
                               .attr("x", 5)
                               .attr("dy", 15)
                               .text(diff <= 0 ?
-                                state.D_Nominee + ": " + state.D_Votes + " (" + state.D_Percentage + "%)" :
-                                state.R_Nominee + ": " + state.R_Votes + " (" + state.R_Percentage + "%)"
+                                state.D_Nominee + ": " + state.D_Votes + " (" + (toInt(state.D_Votes)/(toInt(state.D_Votes)+toInt(state.R_Votes))*100).toFixed(1) + "%)" :
+                                state.R_Nominee + ": " + state.R_Votes + " (" + (toInt(state.R_Votes)/(toInt(state.D_Votes)+toInt(state.R_Votes))*100).toFixed(1) + "%)"
                               )
     }
 
@@ -223,5 +212,20 @@ function loadVis(year) {
       d3.select("#tt-" + state.Abbreviation).remove()
     }
   });
+
+  function scaledLocation(state, axis){
+    for(let i = 0; i < map.length; i++){
+      for(let j = 0; j < map[0].length; j++) {
+        if (map[i][j] == state.Abbreviation) {
+          return axis == "x" ? width/map[0].length*j : (height-100)/map.length*i+100;
+        }
+      }
+    }
+  }
+
+  function toInt(num) {
+    num = num.toString().replace(/,/g, "");
+    return parseInt(num);
+  }
 }
 </script>
