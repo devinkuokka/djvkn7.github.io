@@ -126,7 +126,7 @@ path {
                 svg.select('#viz').append('g').attr('id', 'viz')
                     .selectAll('path')
                     .data(partition(root).descendants())
-                    .enter().append('path')
+                    .enter().append('path').attr('id', (d) => {return d.data.label; })
                     .attr('d', arc)
                     .style('fill', function(d) { return getColor(d.data.label); })
                     .on('mouseover', highlight)
@@ -182,7 +182,8 @@ path {
                     showFact(d);
                     let path = d.ancestors();
                     svg.selectAll("path")
-                        .style("opacity", current => { return path.includes(current) || current==path  ? 1 : .2; });
+                        //.style("opacity", current => { return path.includes(current) || current==path  ? 1 : .2; });
+                        .style("opacity", current => { console.log(getColor(d.data.label)); console.log(current.data.label); })
                 }
             }
 
