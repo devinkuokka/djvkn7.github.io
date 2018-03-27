@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.article {
+    width:700px;
+    padding-left: 100px;
+}
+
+.section {
+    font-family: "cheltenham-normal-300",georgia,"times new roman",times,serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    font-style: normal;
+}
+path {
+  stroke: #fff;
+  stroke-width:1px;
+}
+
+#title {
+    color: #666;
+    font-size: 1.1em;
+    font-stretch: semi-condensed;
+    font-variant: small-caps;
+    font-family: Arial Narrow, sans-serif;
+}
+
+.defaultText {
+    color: #666;
+    justify-content: center;
+    text-align: center;
+    font-stretch: semi-condensed;
+    font-variant: small-caps;
+    font-family: Arial Narrow, sans-serif;
+    font-size: 0.85em;
+}
+#factPercent {
+    text-align: center;
+    color: #666;
+    font-size: 2em;
+}
+</style>
+<html>
+    <div class='article'>
+        <h1><i>Florida Gun Bill: What’s in It, and What Isn’t</i></h1>
+        <p>The gun control bill that the Florida Legislature passed on Wednesday was, in many respects, a major victory for the new activists of Marjory Stoneman Douglas High School. It was passed in defiance of the National Rifle Association and, if Gov. Rick Scott signs it, will be the first successful gun control measure in Florida in more than 20 years.</p>
+        <p>But it left out many of the biggest provisions the students and their supporters had sought, including bans on assault weapons and high-capacity magazines. Here is a look at what is in the final bill, and what is not.</p>
+        <h4 class='section'>What the bill does</h4>
+        <p > • <strong>Raise the minimum age. </strong> The bill would change the minimum age for all gun purchases to 21 from 18 — a provision that would have prohibited the Parkland gunman, Nikolas Cruz, 19, from legally buying the rifle he used in his massacre. This is a divergence from federal law, under which people cannot buy handguns from licensed dealers until they are 21, but can buy shotguns and rifles — often much deadlier than handguns — at 18. (Unlicensed sales, such as at gun shows, have looser restrictions.) Governor Scott and Senator Marco Rubio, a fellow Republican, endorsed the age increase last month.</p>
+
+        <svg width="810" height="550"></svg>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
+        <script src="https://d3js.org/d3-scale.v2.min.js"></script>
+        <script src="https://d3js.org/d3-color.v1.min.js"></script>
+        <script src="https://d3js.org/d3-format.v1.min.js"></script>
+        <script>
+
+            // Sunburst code adapted from: https://bl.ocks.org/maybelinot/5552606564ef37b5de7e47ed2b7dc099
+            // Trailing highllight code apadted from: https://bl.ocks.org/kerryrodden/7090426
+
+            var svg = d3.select("svg"),
+                width = +svg.attr("width"),
+                height = +svg.attr("height")
+
+            var radius = (Math.min(width,height)/2) - 10;
+            var formatNumber = d3.format(",.1%");
+
+            var x = d3.scaleLinear()
+                .range([0, 2 * Math.PI]);
+
+            var y = d3.scaleSqrt()
+                .range([0, radius]);
+
+            var partition = d3.partition();
+
+            var arc = d3.arc()
+                .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x0))); })
+                .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x1))); })
+                .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
+                .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
+
+            var colors = {
+                'Law': {'federal':'#6baed6', 'rifle': '#3182bd', 'rifle-handgun': '#08519c' },
+                'Age': {'under_18': '#bae4b3', '18-21': '#74c476', 'over_21': '#31a354' },
+                'Outcome': {'injured': '#fcae91', 'killed': '#B11B03'},
+                'Intent':{'accidental': '#fdbe85', 'intentional': '#fd8d3c'}
+            };
+            var facts = {
+                'federal': 'of all injuries and fatalities occured in states with handgun and rifle/shotgun purchase laws that deviated to Federal law',
+                'rifle': 'of total injuries and fatalities occured in states with stricter-than-Federal rifle/shotgun purchase laws',
+                'rifle-handgun': 'of total injuries and fatalities occured in states with stricter-than-Federal handgun and rifle/shotgun purchase laws',
+                'under_18': 'of which had shooters that were under 18',
+                '18-21': 'of which had shooters that were between 18 and 21',
+                'over_21': 'of which had shooters that were over 21',
+                'killed': 'of victims across all of these incidents had fatal injuries',
+                'injured': 'of victims across all of these incidents had non-fatal injuries',
+                'accidental': 'of these incidents were accidental',
+                'intentional': 'of these incidents were intentional (i.e. homicide, suicide)'
+            }
+
+            d3.json("heirarchicalData.json", function(root) {
+
+                root = d3.hierarchy(root);
+                root.sum(function(d) { return d.perCapita; });
+
+                svg.append('g').attr("id", "container")
+                    .append('text').attr('id', 'title')
+                    .attr('x', 10).attr('y', 30)
+                    .text('Gun Incidents by Shooter Age')
+
+                svg.select('#container').append('g').attr('id', 'legend')
+                let y = height - 100;
+                for(let c in colors) {
+                    y += 20;
+                    createLegend(c, colors[c], 0, y);
+                }
+
+                svg.select('g').append('g').attr('id','viz')
+                    .attr("transform", "translate(" + (width/2) + "," + (height/2) + ")")
+
+                svg.select('#viz').append("circle")
+                    .attr("r", radius)
+                    .style("opacity", 0);
+
+                svg.select('#viz').append('g').attr('id', 'viz')
+                    .selectAll('path')
+                    .data(partition(root).descendants())
+                    .enter().append('path')
+                    .attr('d', arc)
+                    .style('fill', function(d) { return getColor(d.data.label); })
+                    .on('mouseover', highlight)
+
+                svg.select('#viz').append('foreignObject').attr("id", "startingFact")
+                    .attr('x',-90).attr('y', -80)
+                    .attr('width', 180).attr('height', 165)
+                    .append('xhtml:p').attr("class", "defaultText")
+                        .style('opacity', 1)
+                        .text('Under Federal Law, '
+                        + 'the minimum age to purchase handguns and rifles/shotguns from liscensed dealers (i.e. official stores) is 21 and 18, respectively, '
+                        + 'dropping to 18 and none, respectively, for unliscensed dealers (i.e. gun shows, friends, family, etc.)')
+
+                d3.select("#viz").on("mouseleave", restore);
+            });
+
+            function createLegend(section, data, x, y) {
+                let count = d3.entries(data).length;
+                svg.select('#legend').append('g').attr('id', section)
+                svg.select('#'+section).selectAll('rect')
+                    .data(d3.entries(data))
+                    .enter().append('rect')
+                    .attr('x', () => { x += x == 30 ? 10 : 10; return x; })
+                    .attr('y', y)
+                    .attr('width', 10).attr('height', 10)
+                    .style('fill', (d) => { return d.value; })
+                svg.select('#'+section).append('text').attr('class', 'defaultText')
+                    .attr('x', 15 + 10*count).attr('y', y+10)
+                    .text( () => {
+                        if(section == 'Law') {
+                            return 'Law Strictness';
+                        } else if (section == 'Age') {
+                            return 'Shooter Age';
+                        } else {
+                            return section;
+                        }
+                    });
+            }
+
+            function getColor(label) {
+                if (label == "root") {
+                    return '#ffffff';
+                }
+                for(var c in colors){
+                    if (colors[c][label] != null) {
+                        return colors[c][label];
+                    }
+                }
+            }
+
+            function highlight(d){
+                if (d.data.label != 'root') {
+                    showFact(d);
+                    let path = d.ancestors();
+                    svg.selectAll("path")
+                        .style("opacity", current => { return path.includes(current) || current==path  ? 1 : .2; });
+                }
+            }
+
+            function restore(d) {
+              // Deactivate all segments during transition.
+              d3.selectAll("path").on("mouseover", null);
+              // Transition each segment to full opacity and then reactivate it.
+              d3.selectAll("path")
+                  .transition()
+                  .duration(1000)
+                  .style('opacity', 1)
+                  .on('end', () => {d3.selectAll('path').on("mouseover", highlight);})
+              //d3.selectAll("path").on("mouseover", highlight)
+              d3.select('#factPercent').remove();
+              d3.select('#factDetails').remove();
+              d3.select('#startingFact')
+                .transition()
+                .duration(1000)
+                .style('opacity', 1)
+            }
+
+            function showFact(d) {
+                svg.select('#startingFact').style('opacity', 0)
+                d3.select('#factPercent').remove();
+                d3.select('#factDetails').remove();
+
+                svg.select('#viz').append('foreignObject')
+                    .attr("id", "factPercent").attr("class", "factPercent")
+                    .attr('x',-90).attr('y', -85)
+                    .attr('width', 180).attr('height', 160)
+                    .append('xhtml:p')
+                        .attr('class', 'defaultText')
+                        .text(formatNumber(d.value/d.parent.value))
+                svg.select('#viz').append('foreignObject')
+                    .attr('id', 'factDetails')
+                    .attr('x',-90).attr('y', -15)
+                    .attr('width', 180).attr('height', 160)
+                    .append('xhtml:p').attr('class', 'defaultText')
+                        .text(facts[d.data.label])
+            }
+        </script>
+
+        <p> • <strong>Create a waiting period. </strong>Prospective gun buyers would have to wait three days, or until a background check is completed, whichever is longer. There would be some exceptions, including for police officers, members of the military, licensed hunters and licensed concealed carriers.</p>
+        <p> • <strong>Ban bump stocks. </strong> Bump stocks are devices that can be attached to rifles to enable them to fire faster, and they will no longer be legal in Florida if the bill is signed. (You can learn more about them <a href="https://www.nytimes.com/interactive/2017/10/04/us/bump-stock-las-vegas-gun.html">here</a>.) They came to public attention in October, after a gunman in Las Vegas used them to kill 58 people and wound hundreds; with the devices, his semiautomatic weapons were able to fire almost as fast as fully automatic machine guns. After that massacre, the N.R.A. said it supported a national ban on bump stocks, an extremely rare gun control endorsement by the group. But the proposal languished in Congress, and while President Trump told the Justice Department last month to issue new regulations, thus far it has not.</p>
+        <p> • <strong>Arm school employees. </strong>Perhaps the most controversial provision of the bill is one that would allow superintendents and sheriffs to arm school personnel — a measure not requested by the Parkland students but long desired by the N.R.A., which argues that gun-free zones prevent people from defending themselves in an attack. Specifically, the bill would create a $67 million “marshal” program under which certain employees — including counselors, coaches and librarians, but not full-time classroom teachers — could be trained and armed. (The program would be voluntary.) Under an amendment successfully proposed by State Senator Randolph Bracy, a Democrat, these employees would first have to undergo 12 hours of diversity training.</p>
+        <p> • <strong>Fund school security. </strong>The bill allocates millions of dollars to make buildings more secure and to hire more school-based police officers. However, when the Parkland shooting happened, an armed school resource officer was present, standing by the door to the building, and did not enter. (The officer, Scot Peterson, resigned from the Broward County Sheriff’s Office after his actions were called into question; Sheriff Scott Israel said at a news conference last month that he should have gone into the building and confronted the gunman. Mr. Peterson later said he acted the way he did because he thought the gunfire was coming from outside.)</p>
+        <p> • <strong>Expand mental health services and regulations. </strong>Florida school districts would receive state funding to provide mental health care to students. Additionally, the bill would allow the police to temporarily confiscate guns from anyone subject to involuntary psychiatric evaluation under Florida’s Baker Act. It would also prohibit gun sales to Floridians who were committed to mental institutions or deemed mentally incompetent by a judge, and would allow the police — with judicial approval — to bar a person deemed dangerous from owning guns for up to a year.</p>
+        <h4 class='section'>What it doesn’t do</h4>
+        <p> • <strong>Ban assault weapons. </strong>One of the biggest demands of the Parkland students — as well as many lawmakers, including some Republicans generally sympathetic to the N.R.A. — was a ban on assault weapons. The term is ambiguous and would have needed to be defined in any such legislation; a federal ban that was in place from 1994 to 2004 applied to semiautomatic weapons with two or more of a list of specific features (for example, a telescoping stock and a pistol grip). The wounds caused by these weapons can be far more devastating than a handgun injury, and in polls, majorities support banning them.</p>
+        <p> • <strong> Suspend AR-15 sales. </strong>Once it became clear that a majority of the Florida Legislature was not inclined to ban all assault weapons, Senator Oscar Braynon, a Democrat, proposed an amendment to the gun control bill that would have halted AR-15 sales for two years. The AR-15 and its variants have become the weapons of choice for many mass shooters, including Mr. Cruz as well as the gunmen in Sutherland Springs, Tex.; Las Vegas; Orlando, Fla.; San Bernardino, Calif.; Newtown, Conn.; and Aurora, Colo. With such a weapon, an attacker can wield essentially the same firepower as American soldiers. Mr. Braynon’s amendment was rejected.</p>
+        <p> • <strong> Ban high-capacity magazines. </strong>The bill does not ban high-capacity magazines, which can hold as many as 100 rounds. These magazines allow gunmen to shoot more people in less time, because they do not have to stop to reload as often. (In addition to the obvious — forcing a pause in the gunfire — reloading can afford a brief opportunity to take the gunman down. The 2011 shooting in Tucson, Ariz., which killed six people and gravely wounded Representative Gabrielle Giffords, ended when the gunman stopped to reload and onlookers grabbed the new magazine from his hands and tackled him.) Like a ban on assault weapons, this is a proposal with widespread public support.</p>
+        <p> • <strong> Strengthen background checks. </strong>Changes to background check procedures have received bipartisan support since the Parkland shooting, including from President Trump, but the Florida bill does not address them. Federal law requires background checks for gun sales by licensed dealers, but there are holes in the system. Private firearm sales are not always subject to checks, for example. And officials do not always inform the F.B.I.’s National Instant Criminal Background Check System of things, like criminal convictions and mental illnesses, that could disqualify a person from buying a gun. The Sutherland Springs shooter, for example, had been court-martialed for domestic violence, but the Air Force did not submit that information to the federal database; nor did it report similar information about dozens of other people.</p>
+    </div>
+</html>
