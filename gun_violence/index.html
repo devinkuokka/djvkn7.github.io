@@ -80,6 +80,7 @@ path {
                 .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
                 .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
 
+            var highlightedOnClick = [];
             var colors = {
                 'Law': {'federal':'#6baed6', 'rifle': '#3182bd', 'rifle-handgun': '#08519c' },
                 'Age': {'under_18': '#bae4b3', '18-21': '#74c476', 'over_21': '#31a354' },
@@ -87,12 +88,12 @@ path {
                 'Intent':{'accidental': '#fdbe85', 'intentional': '#fd8d3c'}
             };
             var facts = {
-                'federal': 'of all injuries and fatalities occured in states with handgun and rifle/shotgun purchase laws that deviated to Federal law',
+                'federal': 'of all injuries and fatalities occured in states with handgun and rifle/shotgun purchase laws that deviate to Federal law',
                 'rifle': 'of total injuries and fatalities occured in states with stricter-than-Federal rifle/shotgun purchase laws',
                 'rifle-handgun': 'of total injuries and fatalities occured in states with stricter-than-Federal handgun and rifle/shotgun purchase laws',
-                'under_18': 'of which had shooters that were under 18',
-                '18-21': 'of which had shooters that were between 18 and 21',
-                'over_21': 'of which had shooters that were over 21',
+                'under_18': 'of which were caused by shooters that were under 18',
+                '18-21': 'of which were caused by shooters that were between 18 and 21',
+                'over_21': 'of which were caused by shooters that were over 21',
                 'killed': 'of victims across all of these incidents had fatal injuries',
                 'injured': 'of victims across all of these incidents had non-fatal injuries',
                 'accidental': 'of these incidents were accidental',
@@ -121,15 +122,16 @@ path {
 
                 svg.select('#viz').append("circle")
                     .attr("r", radius)
-                    .style("opacity", 0);
+                    .style("opacity", 0)
 
                 svg.select('#viz').append('g').attr('id', 'viz')
                     .selectAll('path')
                     .data(partition(root).descendants())
-                    .enter().append('path').attr('id', (d) => {return d.data.label; })
+                    .enter().append('path')
                     .attr('d', arc)
                     .style('fill', function(d) { return getColor(d.data.label); })
-                    .on('mouseover', highlight)
+                    .on('mouseover', highlightTrail)
+                    .on('click', highlightSection)
 
                 svg.select('#viz').append('foreignObject').attr("id", "startingFact")
                     .attr('x',-90).attr('y', -80)
@@ -177,17 +179,45 @@ path {
                 }
             }
 
-            function highlight(d){
+            function highlightSection(d) {
+                if (d.data.label != 'root' && highlightedOnClick[0] != d) {
+                    highlightedOnClick = [];
+                    showFact(d);
+                    highlightedOnClick.push(d);
+                    let section = d.descendants();
+                    svg.selectAll("path")
+                        .style('opacity', current => {
+                            if (section.includes(current) || getColor(d.data.label)==getColor(current.data.label)) {
+                                highlightedOnClick.push(current);
+                                return 1;
+                            } else {
+                                return .2
+                            }
+                        })
+                } else {
+                    highlightedOnClick = [];
+                    highlightTrail(d);
+                }
+
+            }
+
+            function highlightTrail(d){
                 if (d.data.label != 'root') {
                     showFact(d);
-                    let path = d.ancestors();
-                    svg.selectAll("path")
-                        //.style("opacity", current => { return path.includes(current) || current==path  ? 1 : .2; });
-                        .style("opacity", current => { console.log(getColor(d.data.label)); console.log(current.data.label); })
+                    if (highlightedOnClick.length == 0) {
+                        let path = d.ancestors();
+                        svg.selectAll("path")
+                            .style("opacity", current => { return path.includes(current) ? 1 : .2; });
+                    } else {
+                        svg.selectAll('path')
+                            .style('opacity', current => { return current == d || highlightedOnClick.includes(current) ? 1 : .2; })
+                    }
+
                 }
             }
 
             function restore(d) {
+              highlightedOnClick = [];
               // Deactivate all segments during transition.
               d3.selectAll("path").on("mouseover", null);
               // Transition each segment to full opacity and then reactivate it.
@@ -195,7 +225,7 @@ path {
                   .transition()
                   .duration(1000)
                   .style('opacity', 1)
-                  .on('end', () => {d3.selectAll('path').on("mouseover", highlight);})
+                  .on('end', () => {d3.selectAll('path').on("mouseover", highlightTrail);})
               //d3.selectAll("path").on("mouseover", highlight)
               d3.select('#factPercent').remove();
               d3.select('#factDetails').remove();

@@ -1,0 +1,3862 @@
+{
+ "incidents": [
+  {
+   "date": "March 12, 2018",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 7, 2018",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "2",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 4, 2018",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 20, 2018",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "25",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "February 18, 2018",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 8, 2018",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 8, 2018",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 7, 2018",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "February 7, 2018",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 3, 2018",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 3, 2018",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "February 3, 2018",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 21, 2018",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 15, 2018",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 14, 2018",
+   "state": "Nebraska",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "January 1, 2018",
+   "state": "Oregon",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 31, 2017",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 30, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 26, 2017",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 22, 2017",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 21, 2017",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 19, 2017",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 17, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "December 15, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 13, 2017",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 10, 2017",
+   "state": "Utah",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 9, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 5, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 4, 2017",
+   "state": "New Mexico",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 30, 2017",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 26, 2017",
+   "state": "Nevada",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "21",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 25, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 24, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 16, 2017",
+   "state": "Colorado",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 13, 2017",
+   "state": "North Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 13, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 12, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 11, 2017",
+   "state": "Minnesota",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 8, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 4, 2017",
+   "state": "New Hampshire",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 2, 2017",
+   "state": "Connecticut",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 2, 2017",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 31, 2017",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 31, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 29, 2017",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 28, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 26, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 26, 2017",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 23, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 21, 2017",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 14, 2017",
+   "state": "Washington",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 11, 2017",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 7, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 7, 2017",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 7, 2017",
+   "state": "Utah",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "23",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 3, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 1, 2017",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "September 30, 2017",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "1"
+  },
+  {
+   "date": "September 30, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 26, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 24, 2017",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 22, 2017",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 19, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 17, 2017",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 14, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 2, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 28, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 27, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 17, 2017",
+   "state": "North Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "26",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 15, 2017",
+   "state": "Washington",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 15, 2017",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 14, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 12, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 9, 2017",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 8, 2017",
+   "state": "Wisconsin",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "10",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "August 7, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 4, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 4, 2017",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 2, 2017",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 26, 2017",
+   "state": "Wisconsin",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 26, 2017",
+   "state": "California",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 23, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 20, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "43",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 19, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 18, 2017",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 17, 2017",
+   "state": "Idaho",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 14, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 13, 2017",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 8, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "July 8, 2017",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 6, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 4, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 1, 2017",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 30, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 26, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "1",
+   "shooters": [
+    {
+     "age": "11",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "June 24, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 24, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "1",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "June 22, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 19, 2017",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 19, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "41",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 17, 2017",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "2",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "June 16, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 14, 2017",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 12, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 10, 2017",
+   "state": "South Dakota",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 8, 2017",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 8, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "June 6, 2017",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 1, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 1, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "May 31, 2017",
+   "state": "Kansas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "May 30, 2017",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "31",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "May 26, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "21",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "May 24, 2017",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 24, 2017",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "May 21, 2017",
+   "state": "Wisconsin",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 20, 2017",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 20, 2017",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "10",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "May 12, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "31",
+     "age_group": "Adult 18+"
+    },
+    {
+    },
+    {
+    },
+    {
+    }
+   ]
+  },
+  {
+   "date": "May 8, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "May 5, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 1, 2017",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 30, 2017",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 30, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "11",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "April 25, 2017",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 25, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "April 21, 2017",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 19, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "35",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "April 12, 2017",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 10, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "22",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 10, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "April 9, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "April 8, 2017",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "April 4, 2017",
+   "state": "Kansas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 27, 2017",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 23, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 22, 2017",
+   "state": "Texas",
+   "killed": "2",
+   "injured": "0"
+  },
+  {
+   "date": "March 22, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 20, 2017",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 18, 2017",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 14, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "9",
+     "age_group": "Child 0-11"
+    },
+    {
+     "age": "41",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 13, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "49",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 10, 2017",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 10, 2017",
+   "state": "Washington",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 6, 2017",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 4, 2017",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 26, 2017",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 25, 2017",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "February 23, 2017",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 23, 2017",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 18, 2017",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "62",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "February 18, 2017",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 14, 2017",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 11, 2017",
+   "state": "Wisconsin",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 2, 2017",
+   "state": "Idaho",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 31, 2017",
+   "state": "Nebraska",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 30, 2017",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "January 26, 2017",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 22, 2017",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 15, 2017",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 13, 2017",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 5, 2017",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "28",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 31, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 31, 2016",
+   "state": "Oregon",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 31, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 29, 2016",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 28, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 28, 2016",
+   "state": "Maine",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 27, 2016",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 25, 2016",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 23, 2016",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 22, 2016",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 21, 2016",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 19, 2016",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 17, 2016",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 17, 2016",
+   "state": "Kansas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 12, 2016",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    },
+    {
+    }
+   ]
+  },
+  {
+   "date": "December 6, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "11",
+     "age_group": "Child 0-11"
+    },
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 2, 2016",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 28, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 28, 2016",
+   "state": "Texas",
+   "killed": "2",
+   "injured": "0"
+  },
+  {
+   "date": "November 27, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "21",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 26, 2016",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 22, 2016",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 22, 2016",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 12, 2016",
+   "state": "Colorado",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 11, 2016",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 8, 2016",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 7, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 6, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 30, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 22, 2016",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 16, 2016",
+   "state": "Washington",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 16, 2016",
+   "state": "North Dakota",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 11, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 9, 2016",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 7, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "October 3, 2016",
+   "state": "North Dakota",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 29, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 27, 2016",
+   "state": "Iowa",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 22, 2016",
+   "state": "Maryland",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 17, 2016",
+   "state": "Alaska",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 14, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 12, 2016",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "September 8, 2016",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "September 5, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "September 5, 2016",
+   "state": "Michigan",
+   "killed": "2",
+   "injured": "0"
+  },
+  {
+   "date": "August 28, 2016",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "11",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "August 27, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "21",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 15, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 12, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 9, 2016",
+   "state": "Idaho",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 6, 2016",
+   "state": "North Carolina",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 5, 2016",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 2, 2016",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "1",
+   "shooters": [
+    {
+     "age": "11",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "August 2, 2016",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 1, 2016",
+   "state": "Oklahoma",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "22",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 31, 2016",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 30, 2016",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 26, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 25, 2016",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "23",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 22, 2016",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 19, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 15, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 15, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 15, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 8, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 6, 2016",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 3, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "64",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 3, 2016",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 29, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 28, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "June 27, 2016",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 27, 2016",
+   "state": "Alaska",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "June 22, 2016",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 22, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 17, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 13, 2016",
+   "state": "West Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 11, 2016",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 7, 2016",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 6, 2016",
+   "state": "Maryland",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "June 6, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 3, 2016",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 3, 2016",
+   "state": "Colorado",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 3, 2016",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 25, 2016",
+   "state": "Washington",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "May 19, 2016",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "May 14, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "May 10, 2016",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "April 19, 2016",
+   "state": "California",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "April 14, 2016",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "April 10, 2016",
+   "state": "North Carolina",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "April 2, 2016",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 31, 2016",
+   "state": "North Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 28, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 27, 2016",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 25, 2016",
+   "state": "Hawaii",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 20, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "31",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "44",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 19, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 18, 2016",
+   "state": "Iowa",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "13",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 17, 2016",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "22",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 14, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 14, 2016",
+   "state": "West Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "March 14, 2016",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "March 12, 2016",
+   "state": "Iowa",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 7, 2016",
+   "state": "West Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "21",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "March 6, 2016",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "March 5, 2016",
+   "state": "South Dakota",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 27, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 21, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 21, 2016",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 20, 2016",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 19, 2016",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "February 18, 2016",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 13, 2016",
+   "state": "Nevada",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "February 11, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 11, 2016",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "February 8, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 30, 2016",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 25, 2016",
+   "state": "Texas",
+   "killed": "2",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "22",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 25, 2016",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "January 22, 2016",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 20, 2016",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 17, 2016",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 16, 2016",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 16, 2016",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 14, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "January 12, 2016",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "72",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 11, 2016",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "1",
+   "shooters": [
+    {
+     "age": "57",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "January 9, 2016",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 9, 2016",
+   "state": "Alabama",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "January 4, 2016",
+   "state": "Tennessee",
+   "killed": "2",
+   "injured": "1",
+   "shooters": [
+    {
+     "age": "20",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 31, 2015",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "52",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 30, 2015",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 24, 2015",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 22, 2015",
+   "state": "Wisconsin",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 21, 2015",
+   "state": "Pennsylvania",
+   "killed": "3",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "25",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "22",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 21, 2015",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 19, 2015",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 19, 2015",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 18, 2015",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 13, 2015",
+   "state": "Mississippi",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 13, 2015",
+   "state": "Missouri",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "27",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 12, 2015",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "December 10, 2015",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "December 5, 2015",
+   "state": "Colorado",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 4, 2015",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "December 3, 2015",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 29, 2015",
+   "state": "Minnesota",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 28, 2015",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 27, 2015",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "21",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 24, 2015",
+   "state": "Ohio",
+   "killed": "0",
+   "injured": "2"
+  },
+  {
+   "date": "November 19, 2015",
+   "state": "Virginia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 19, 2015",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "23",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "November 15, 2015",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 14, 2015",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "November 12, 2015",
+   "state": "New York",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "November 7, 2015",
+   "state": "California",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 23, 2015",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 18, 2015",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 17, 2015",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 17, 2015",
+   "state": "Idaho",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 15, 2015",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 13, 2015",
+   "state": "Louisiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 10, 2015",
+   "state": "Maryland",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 5, 2015",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "October 4, 2015",
+   "state": "California",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 3, 2015",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "October 2, 2015",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "11",
+     "age_group": "Child 0-11"
+    }
+   ]
+  },
+  {
+   "date": "October 2, 2015",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "October 1, 2015",
+   "state": "New Mexico",
+   "killed": "1",
+   "injured": "1"
+  },
+  {
+   "date": "September 26, 2015",
+   "state": "Indiana",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 23, 2015",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "September 13, 2015",
+   "state": "Colorado",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "59",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "September 12, 2015",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "September 11, 2015",
+   "state": "Kansas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 24, 2015",
+   "state": "Arizona",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 24, 2015",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 20, 2015",
+   "state": "Georgia",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 20, 2015",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "August 20, 2015",
+   "state": "South Carolina",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "August 13, 2015",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 12, 2015",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 10, 2015",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+    }
+   ]
+  },
+  {
+   "date": "August 9, 2015",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 6, 2015",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 6, 2015",
+   "state": "Pennsylvania",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "August 5, 2015",
+   "state": "Tennessee",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 30, 2015",
+   "state": "Kentucky",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 30, 2015",
+   "state": "Florida",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 27, 2015",
+   "state": "Colorado",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 26, 2015",
+   "state": "North Carolina",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 20, 2015",
+   "state": "Wisconsin",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "19",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "July 20, 2015",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "29",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    },
+    {
+     "age_group": "Teen 12-17"
+    },
+    {
+    }
+   ]
+  },
+  {
+   "date": "July 16, 2015",
+   "state": "Texas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "15",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "July 15, 2015",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "July 12, 2015",
+   "state": "Connecticut",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 26, 2015",
+   "state": "Massachusetts",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 22, 2015",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "18",
+     "age_group": "Adult 18+"
+    },
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "June 12, 2015",
+   "state": "Illinois",
+   "killed": "1",
+   "injured": "0"
+  },
+  {
+   "date": "June 3, 2015",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "16",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 23, 2015",
+   "state": "Arkansas",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 22, 2015",
+   "state": "Michigan",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "12",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 16, 2015",
+   "state": "California",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 11, 2015",
+   "state": "Washington",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "17",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 10, 2015",
+   "state": "Ohio",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "28",
+     "age_group": "Adult 18+"
+    }
+   ]
+  },
+  {
+   "date": "May 3, 2015",
+   "state": "Minnesota",
+   "killed": "1",
+   "injured": "0",
+   "shooters": [
+    {
+     "age": "14",
+     "age_group": "Teen 12-17"
+    }
+   ]
+  },
+  {
+   "date": "May 1, 2015",
+   "state": "California",
+   "killed": "1",
+   "injured": "0"
+  }
+ ]
+}
